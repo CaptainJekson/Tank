@@ -26,7 +26,8 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
-        _initialPositionCamera = _camera.eulerAngles.x;
+        if (_camera != null)
+            _initialPositionCamera = _camera.eulerAngles.x;
     }
 
     private void Update()
@@ -37,7 +38,8 @@ public class Gun : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ToIncline();
+        if (_camera != null)
+            ToIncline();
     }
 
     private void OnEnable()
@@ -58,7 +60,7 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        if(CanShoot)
+        if (CanShoot)
         {
             Shell newShell = Instantiate(_shell, _barrel.position, transform.rotation);
             newShell.ShellLaunch(_forceShell);

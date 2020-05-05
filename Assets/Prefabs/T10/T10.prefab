@@ -4870,6 +4870,7 @@ MonoBehaviour:
   _rotateSpeedTower: 2
   _caterpillarLeft: {fileID: 5056347822101143096}
   _caterpillarRight: {fileID: 8714006629545889856}
+  _noControl: 0
 --- !u!1 &2412518982767584836
 GameObject:
   m_ObjectHideFlags: 0
@@ -9778,13 +9779,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7003af7cb30d24297f71f380836635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tank: {fileID: 0}
+  _tank: {fileID: 2091749391}
   _camera: {fileID: 0}
-  _barrel: {fileID: 0}
-  _shell: {fileID: 0}
-  _forceShell: 0
   _minIncline: 10
   _maxIncline: -10
+  _shell: {fileID: 6447449296193579244, guid: d4ab5b58a9fc5ff4d9cecda5300c5f08, type: 3}
+  _barrel: {fileID: 6454763469737054532}
+  _forceShell: 100
+  _shootingRate: 1
 --- !u!1 &6727663765806678824
 GameObject:
   m_ObjectHideFlags: 0

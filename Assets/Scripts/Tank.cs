@@ -16,6 +16,9 @@ public class Tank : MonoBehaviour
     [SerializeField] private Caterpillar _caterpillarLeft;
     [SerializeField] private Caterpillar _caterpillarRight;
 
+    [Header("Для теста")]
+    [SerializeField] private bool _noControl; 
+
     private Rigidbody _rigidbody;
     private bool _isRotate;
 
@@ -30,8 +33,13 @@ public class Tank : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ToControl(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D);
-        ToShoot(KeyCode.Mouse0);
+        if(_noControl == false)
+        {
+            ToControl(KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D);
+            ToShoot(KeyCode.Mouse0);
+        }
+
+        TransmissionToTracks(_isRotate);
     }
 
     private void ToControl(KeyCode forward, KeyCode backward, KeyCode leftRotate, KeyCode rightRotate)
@@ -62,8 +70,6 @@ public class Tank : MonoBehaviour
             _caterpillarRight.SetIsForward(false);
             _isRotate = true;
         }
-
-        TransmissionToTracks(_isRotate);
     }
 
     private void ToShoot(KeyCode fire)

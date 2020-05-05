@@ -7,7 +7,8 @@ public class Tower : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ToRotate();
+        if (_target != null)
+            ToRotate();
     }
 
     private void ToRotate()
